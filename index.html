@@ -35,39 +35,55 @@
     .brand .logo{ width:36px; height:36px; display:grid; place-items:center; border-radius:10px; background:#111827; box-shadow: var(--shadow) }
     .brand .logo span{ font-size:22px }
     .badge{ font-size:12px; color:#10b981; border:1px solid #10b98155; padding:4px 10px; border-radius:999px; background:#064e3b88 }
+
     .card{ background:var(--card); border:1px solid #ffffff0f; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden }
     .hero{ display:grid; grid-template-columns: 1.1fr .9fr; gap:16px; padding:18px }
     @media (max-width: 860px){ .hero{ grid-template-columns: 1fr; } }
+
     .headline{ margin:6px 0 8px; font-size:clamp(22px, 3.2vw, 36px); line-height:1.25; font-weight:900 }
     .sub{ color:var(--muted); font-size:15px; margin-bottom:14px }
+
     .pillz{ display:flex; gap:8px; flex-wrap:wrap; margin:10px 0 18px }
     .pill{ font-size:12px; padding:6px 10px; border-radius:999px; background:#111827; border:1px solid #ffffff12 }
+
     .cta{ display:flex; align-items:center; gap:10px; flex-wrap:wrap }
     .cta .btn{ cursor:pointer; appearance:none; border:none; outline:none; border-radius:14px; padding:14px 18px; font-weight:800; font-size:16px; letter-spacing:.3px; background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#06110a; box-shadow:0 10px 20px rgba(34,197,94,.25); transition: transform .2s ease, filter .2s ease }
     .btn:hover{ transform: translateY(-1px); filter:brightness(1.05) }
     .btn:active{ transform: translateY(0) scale(.98) }
+
     .chk{ display:flex; align-items:flex-start; gap:10px; color:var(--muted); font-size:13px; margin-top:10px }
     .chk input{ transform: translateY(3px) }
+
     .timer{ display:flex; gap:10px; margin:16px 0 6px }
     .tbox{ background:#0b1220; border:1px solid #ffffff10; border-radius:12px; padding:10px 12px; min-width:70px; text-align:center }
     .tbox .num{ font-size:20px; font-weight:800 }
-    .tbox .lab{ font-size:12px; color:#a3a3a3 }
+    .tbox .lab{ font-size:12px; color:var(--muted) }
+
     .phone-illu{ position:relative; display:grid; place-items:center; padding:18px }
-    .iphone{ width:100%; max-width:420px; height:auto; display:block; filter: drop-shadow(0 30px 60px rgba(0,0,0,.45)); }
-    .spark{ position:absolute; inset:auto 0 8px 0; text-align:center; font-weight:800; color:#e5e7ebaa; font-size:12px }
+    .phone{ width:100%; max-width:380px; aspect-ratio: 390/844; border-radius:38px; background: linear-gradient(160deg,#0ea5e9,#22d3ee); border: 10px solid #0f172a; box-shadow: 0 40px 90px rgba(0,0,0,.45), inset 0 0 30px rgba(255,255,255,.25) }
+    .spark{ position:absolute; inset:auto 0 18px 0; text-align:center; font-weight:800; color:#e5e7ebaa; font-size:12px }
+
     .features{ display:grid; grid-template-columns: repeat(3,1fr); gap:12px; padding:0 18px 18px }
     @media (max-width: 720px){ .features{ grid-template-columns:1fr 1fr } }
     @media (max-width: 450px){ .features{ grid-template-columns:1fr } }
     .feat{ background:#0b1220; border:1px solid #ffffff10; border-radius:14px; padding:12px }
     .feat b{ display:block; margin-bottom:6px }
     .feat p{ margin:0; color:var(--muted); font-size:13px }
+
     footer{ text-align:center; color:#8b949e; font-size:12px; padding:18px 0 60px }
     footer a{ color:#9ca3af }
+
     .sticky-cta{ position:sticky; bottom:0; inset-inline:0; background:linear-gradient(180deg, transparent, #0b1220ee 40%); padding:14px 18px }
-    .sticky-cta .bar{ background:#0b1220; border:1px solid #ffffff15; border-radius:14px; padding:10px; display:flex; align-items:center; justify-content:space-between; gap:10px }
+    .sticky-cta .bar{ background:linear-gradient(180deg, #0b1220, #0f172a); border:1px solid #ffffff22; border-radius:16px; padding:12px; display:flex; align-items:center; justify-content:space-between; gap:12px; backdrop-filter: blur(8px); box-shadow: 0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.04) }
     .sticky-cta .mini{ font-weight:700; font-size:14px }
+
     .toast{ position:fixed; inset-inline:0; bottom:14px; margin:auto; width:fit-content; max-width:90vw; background:#111827; border:1px solid #ef444455; color:#fecaca; padding:10px 14px; border-radius:12px; display:none }
-  </style>
+    /* تحسين زر الاشتراك السفلي ليبدو احترافياً */
+  .sticky-cta .btn{ display:inline-flex; align-items:center; gap:10px; padding:14px 22px; font-weight:900; font-size:16px; letter-spacing:.3px; border-radius:999px; background:linear-gradient(90deg,#22c55e 0%, #16a34a 100%); color:#06110a; box-shadow:0 12px 24px rgba(34,197,94,.30), inset 0 1px 0 rgba(255,255,255,.25); border:1px solid rgba(255,255,255,.15); transition: transform .2s ease, filter .2s ease, box-shadow .2s ease }
+  .sticky-cta .btn::after{ content:'↗'; font-weight:900; opacity:.9; transform: translateX(0); margin-inline-start:6px; transition: transform .2s ease }
+  .sticky-cta .btn:hover{ transform: translateY(-1px); filter:brightness(1.05); box-shadow:0 16px 28px rgba(34,197,94,.35) }
+  .sticky-cta .btn:hover::after{ transform: translateX(-3px) }
+</style>
 </head>
 <body>
   <div class="wrap">
@@ -86,7 +102,7 @@
 
         <div class="pillz" aria-label="مميزات سريعة">
           <div class="pill">✅ شحن مجاني للفائز</div>
-          <div class="pill">🇪🇬 متاح داخل الامارات</div>
+          <div class="pill">🇦🇪 متاح داخل الإمارات</div>
           <div class="pill">18+ فقط</div>
         </div>
 
@@ -110,7 +126,7 @@
       </div>
 
       <div class="phone-illu" aria-hidden="true">
-        <img class="iphone" src="iphone.png" alt="iPhone 16 Pro Max" />
+        <div class="phone"></div>
         <div class="spark">📦 هدية أصلية مختومة</div>
       </div>
     </section>
@@ -147,8 +163,8 @@
 
   <script>
     // --------- إعدادات قابلة للتعديل ---------
-    const AFFILIATE_LINK = "https://www.smashblock.help/click?offer_id=31890&pub_id=266021&pub_click_id=ADD_CLICK_ID_HERE&site=PASS_SITE_HERE"; // تم ضبطه
-    const TIMER_HOURS_FROM_FIRST_VISIT = 24; // مدة العداد من أول زيارة
+    const AFFILIATE_LINK = "https://www.smashblock.help/click?offer_id=31890&pub_id=266021&pub_click_id=ADD_CLICK_ID_HERE&site=PASS_SITE_HERE"; // ← بدّل هذا بالرابط النهائي
+    const TIMER_HOURS_FROM_FIRST_VISIT = 24;                      // مدة العداد من أول زيارة
 
     // --------- أدوات مساعدة ---------
     const $ = (sel) => document.querySelector(sel);
@@ -160,13 +176,13 @@
       // مرّر كل باراميترات الصفحة الحالية إن لم تكن موجودة على الرابط النهائي
       params.forEach((v,k)=>{ if(!u.searchParams.has(k)) u.searchParams.set(k,v); });
 
-      // pub_click_id: لو مش موجود أو placeholder، نولده ديناميكياً
+      // pub_click_id: لو مش موجود أو placeholder، نولّده ديناميكياً
       const currClk = u.searchParams.get('pub_click_id');
       if(!currClk || /^ADD_CLICK_ID_HERE$/i.test(currClk)){
         u.searchParams.set('pub_click_id', 'clk_' + Math.random().toString(36).slice(2));
       }
 
-      // site: لو placeholder، نحاول ناخده من بارامترات الصفحة، وإلا نعيّنه لنطاق اللاند
+      // site: لو placeholder، ناخده من بارامترات الصفحة أو hostname
       const currSite = u.searchParams.get('site');
       if(!currSite || /^PASS_SITE_HERE$/i.test(currSite)){
         const fromPage = params.get('site');
@@ -181,7 +197,7 @@
       const agree = $('#agree');
       if(!agree.checked){ showToast(); return; }
       const out = attachQueryParams(AFFILIATE_LINK);
-      // فتح في نفس الصفحة لتحسين التحويل
+      // اختيار: فتح في نفس الصفحة لتحسين التحويل
       location.href = out;
     }
 
